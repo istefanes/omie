@@ -108,8 +108,7 @@ class Connection
      */
     private function extractResponseFromException(\Exception $e): string|array
     {
-        $originalMessage = $e->getMessage();
-        $response = $originalMessage;
+        $response = $e->getMessage();
         
         // Try to capture the response body if the exception has a response
         if ($e instanceof RequestException) {
